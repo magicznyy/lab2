@@ -39,6 +39,19 @@ public class MainActivity extends AppCompatActivity {
         licznikDestroy = savedInstanceState.getInt(KEY_DESTROY, 0);
 
     }
+    
+    
+     @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_CREATE, licznikCreate);
+        outState.putInt(KEY_START, licznikStart);
+        outState.putInt(KEY_RESUME, licznikResume);
+        outState.putInt(KEY_PAUSE, licznikPause);
+        outState.putInt(KEY_STOP, licznikStop);
+        outState.putInt(KEY_RESTART, licznikRestart);
+        outState.putInt(KEY_DESTROY, licznikDestroy);
+    }
 
     public void wyswietlZmienne(View view) {
         String info = "create=" + licznikCreate
